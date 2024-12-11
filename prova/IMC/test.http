@@ -1,0 +1,54 @@
+### Testar a API
+
+# Testar a API raiz
+GET http://localhost:5241
+
+### Cadastrar Aluno
+POST http://localhost:5241/api/aluno/cadastrar
+Content-Type: application/json
+
+{
+  "nome": "John",
+  "sobrenome": "Doe"
+}
+
+### Cadastrar IMC
+POST http://localhost:5241/api/imc/cadastrar
+Content-Type: application/json
+
+{
+  "alunoId": 1,
+  "altura": 1.75,
+  "peso": 70
+}
+
+### Consultar Aluno
+GET http://localhost:5241/api/aluno/consultar/1
+
+### Alterar Aluno
+PUT http://localhost:5241/api/aluno/alterar/1
+Content-Type: application/json
+
+{
+  "nome": "John",
+  "sobrenome": "Smith"
+}
+
+### Excluir Aluno
+DELETE http://localhost:5241/api/aluno/excluir/1
+
+### Listar IMCs
+GET http://localhost:5241/api/imc/listar
+
+### Listar IMCs por Aluno
+GET http://localhost:5241/api/imc/listarporaluno?alunoId=1
+
+### Alterar IMC
+PUT http://localhost:5241/api/imc/alterar
+Content-Type: application/json
+
+{
+  "id": 1,
+  "altura": 1.80,
+  "peso": 75
+}
